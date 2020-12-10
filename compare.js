@@ -111,8 +111,10 @@ $(document).ready(function(){
 	var text = "";
 
 	function textFun(value) {
-      text += "<li class='list-group-item small'>" + value + "</li>";
+      text += "<div class='alert alert-dark alert-dismissible'> <button type='button' class='close' data-dismiss='alert'>&times;</button>" 
+      + value + "</div>";
     } 
+     
 
   $("#btn_com").click(function(){
   	var list = [];
@@ -147,7 +149,6 @@ $(document).ready(function(){
 	$("#result_text").html(text);
 	text="";
   });
-
 
 });
 
