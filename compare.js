@@ -116,6 +116,12 @@ $(document).ready(function(){
     } 
 
   $("#btn_com").click(function(){
+  	var list = [];
+  	$.each($("input[name='toothpaste']:checked"), function(){
+        list.push($(this).val());
+    });
+	console.log(list);
+
     dif_c_s.forEach(textFun);
 	$("#result").removeClass("d-none");    
 	$("#result_text").html(text);
