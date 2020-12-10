@@ -12,42 +12,41 @@
   </head>
   <body>
 
-
+ 
 <div class="container mt-4" id="tab">
-  <table class="table table-bordered table-sm" w3-repeat="toothpastes">
-    <thead class="{{Color}}">
-      <tr>
-        <th>{{Name}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{Ingredients}}</td>
-      </tr>
-    </tbody>
-  </table>
+ <div class="row" w3-repeat="toothpastes">
+
+  <div class="col-1">
+    <div class="form-check">
+      <label class="form-check-label font-weight-bold" for="{{id}}">
+        <input type="checkbox" class="form-check-input" id="{{id}}" name="toothpaste" value="{{Name}}">{{id}}
+      </label>
+    </div>
+  </div>
+
+  <div class="col-11">
+    <table class="table table-bordered table-sm">
+      <thead class="{{Color}}">
+        <tr>
+          <th>{{Name}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{Ingredients}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+ </div>
 </div>
 
-    <div class="container mt-2">
-        <div class="form-check-inline">
-          <label class="form-check-label" for="check1">
-            <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked>Option 1
-          </label>
-        </div>
-        <div class="form-check-inline">
-          <label class="form-check-label" for="check2">
-            <input type="checkbox" class="form-check-input" id="check2" name="vehicle2" value="something">Option 2
-          </label>
-        </div>
-        <div class="form-check-inline">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" disabled>Option 3
-          </label>
-        </div>
+    <div class="container mt-1">
         <button id="btn_com" type="button" class="btn btn-outline-info">Compare</button>
     </div>
 
-    <div class="container mt-1">
+    <div class="container mt-2">
       <p class="text-info d-none" id="result">Result:
        <ul class="list-group list-group-flush w-50" id="result_text">
        </ul> 

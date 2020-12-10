@@ -98,11 +98,11 @@ var Lacalut = [
 ];
 
 var data = {'toothpastes':[
-{'Name':'R_calcium','Color':'table-info', 'Ingredients': R_calcium},
-{'Name':'R_sensetive','Color':'table-primary', 'Ingredients':R_sensetive},
-{'Name':'R_medical','Color':'table-danger', 'Ingredients':R_medical},
-{'Name':'Sensodyne','Color':'table-warning', 'Ingredients':Sensodyne},
-{'Name':'Lacalut','Color':'table-success', 'Ingredients':Lacalut}
+{'id': 't1' ,'Name':'R_calcium','Color':'table-info', 'Ingredients': R_calcium},
+{'id': 't2' ,'Name':'R_sensetive','Color':'table-primary', 'Ingredients':R_sensetive},
+{'id': 't3' ,'Name':'R_medical','Color':'table-danger', 'Ingredients':R_medical},
+{'id': 't4' ,'Name':'Sensodyne','Color':'table-warning', 'Ingredients':Sensodyne},
+{'id': 't5' ,'Name':'Lacalut','Color':'table-success', 'Ingredients':Lacalut}
 ]};
 
 w3.displayObject("tab", data);
