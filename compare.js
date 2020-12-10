@@ -98,17 +98,14 @@ var Lacalut = [
 ];
 
 var data = {'toothpastes':[
-{'id': 't1' ,'Name':'R_calcium','Color':'table-info', 'Ingredients': R_calcium},
-{'id': 't2' ,'Name':'R_sensetive','Color':'table-primary', 'Ingredients':R_sensetive},
-{'id': 't3' ,'Name':'R_medical','Color':'table-danger', 'Ingredients':R_medical},
-{'id': 't4' ,'Name':'Sensodyne','Color':'table-warning', 'Ingredients':Sensodyne},
-{'id': 't5' ,'Name':'Lacalut','Color':'table-success', 'Ingredients':Lacalut}
+{'id': 't1' ,'Name':'R_calcium','Color':'table-info', 'Ingredients': R_calcium, 'cnt': R_calcium.length},
+{'id': 't2' ,'Name':'R_sensetive','Color':'table-primary', 'Ingredients':R_sensetive, 'cnt': R_sensetive.length},
+{'id': 't3' ,'Name':'R_medical','Color':'table-danger', 'Ingredients':R_medical, 'cnt': R_medical.length},
+{'id': 't4' ,'Name':'Sensodyne','Color':'table-warning', 'Ingredients':Sensodyne, 'cnt': Sensodyne.length},
+{'id': 't5' ,'Name':'Lacalut','Color':'table-success', 'Ingredients':Lacalut, 'cnt': Lacalut.length},
 ]};
 
 w3.displayObject("tab", data);
-
-
-
 
 $(document).ready(function(){
 	var text = "";
@@ -123,9 +120,24 @@ $(document).ready(function(){
 
 	  if (checks.length==2) {
 	  	 $.each(checks, function(){
-           list.push($(this).val());
+	  	  if ($(this).val() == 'Lacalut'){
+           list.push(Lacalut);
+	  	  }	
+	  	  if ($(this).val() == 'Sensodyne'){
+           list.push(Sensodyne);
+	  	  }
+	  	  if ($(this).val() == 'R_medical'){
+           list.push(R_medical);
+	  	  }	  	  
+	  	  if ($(this).val() == 'R_sensetive'){
+           list.push(R_sensetive);
+	  	  }	  	  
+	  	  if ($(this).val() == 'R_calcium'){
+           list.push(R_calcium);
+	  	  }
          });
-        var dif = _.xor(R_calcium, R_sensetive);
+        var dif = _.xor(list[0], list[1]);
+        // console.log(list);
 	    dif.forEach(textFun);
       } else{
         text = "<span class='text-danger'>Only 2 things select!</span>";
