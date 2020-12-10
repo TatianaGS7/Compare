@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Compare</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+
+<div class="container mt-4" id="tab">
+  <table class="table table-bordered table-sm" w3-repeat="toothpastes">
+    <thead class="{{Color}}">
+      <tr>
+        <th>{{Name}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{Ingredients}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    <div class="container mt-2">
+        <div class="form-check-inline">
+          <label class="form-check-label" for="check1">
+            <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked>Option 1
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label" for="check2">
+            <input type="checkbox" class="form-check-input" id="check2" name="vehicle2" value="something">Option 2
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" disabled>Option 3
+          </label>
+        </div>
+        <button id="btn_com" type="button" class="btn btn-outline-info">Compare</button>
+    </div>
+
+    <div class="container mt-1">
+      <p class="text-info d-none" id="result">Result:
+       <ul class="list-group list-group-flush w-50" id="result_text">
+       </ul> 
+      </p>
+    </div>  
+
+
+    <script src="compare.js"></script>  
+  </body>
+</html>
+
+
+
