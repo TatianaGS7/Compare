@@ -107,9 +107,11 @@ var data = {'toothpastes':[
 
 w3.displayObject("tab", data);
 
+
+
+
 $(document).ready(function(){
 	var text = "";
-	var dif_c_s = _.xor(R_calcium, R_sensetive);
 
 	function textFun(value) {
       text += "<li class='list-group-item small'>" + value + "</li>";
@@ -117,12 +119,18 @@ $(document).ready(function(){
 
   $("#btn_com").click(function(){
   	var list = [];
-  	$.each($("input[name='toothpaste']:checked"), function(){
-        list.push($(this).val());
-    });
-	console.log(list);
+	var checks = $("input[name='toothpaste']:checked");
 
-    dif_c_s.forEach(textFun);
+	  if (checks.length==2) {
+	  	 $.each(checks, function(){
+           list.push($(this).val());
+         });
+        var dif = _.xor(R_calcium, R_sensetive);
+	    dif.forEach(textFun);
+      } else{
+        text = "<span class='text-danger'>Only 2 things select!</span>";
+      }
+
 	$("#result").removeClass("d-none");    
 	$("#result_text").html(text);
 	text="";

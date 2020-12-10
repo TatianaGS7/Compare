@@ -33,7 +33,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>{{Ingredients}}</td>
+          <td class="small">{{Ingredients}}</td>
         </tr>
       </tbody>
     </table>
@@ -43,20 +43,16 @@
 </div>
 
     <div class="row mt-1 ml-5">
+      <div class="col-2">
         <button id="btn_com" type="button" class="btn btn-outline-info">Compare</button>
+      </div>
+      <div class="col-9 d-none" id="result">
+          <ul class="list-group list-group-flush w-50" id="result_text">
+          </ul> 
+      </div>
     </div>
-
-    <div class="container mt-2">
-      <p class="text-info d-none" id="result">Result:
-       <ul class="list-group list-group-flush w-50" id="result_text">
-       </ul> 
-      </p>
-    </div>  
 
 
     <script src="compare.js"></script>  
   </body>
 </html>
-
-
-
