@@ -116,7 +116,7 @@ $(document).ready(function(){
     } 
      
 
-  $("#btn_com").click(function(){
+  $("#btn1").click(function(){
   	var list = [];
 	var checks = $("input[name='toothpaste']:checked");
 
@@ -141,6 +141,39 @@ $(document).ready(function(){
         var dif = _.xor(list[0], list[1]);
         // console.log(list);
 	    dif.forEach(textFun);
+      } else{
+        text = "<span class='text-danger'>Only 2 things select!</span>";
+      }
+
+	$("#result").removeClass("d-none");    
+	$("#result_text").html(text);
+	text="";
+  });
+
+  $("#btn2").click(function(){
+  	var list = [];
+	var checks = $("input[name='toothpaste']:checked");
+
+	  if (checks.length==2) {
+	  	 $.each(checks, function(){
+	  	  if ($(this).val() == 'Lacalut'){
+           list.push(Lacalut);
+	  	  }	
+	  	  if ($(this).val() == 'Sensodyne'){
+           list.push(Sensodyne);
+	  	  }
+	  	  if ($(this).val() == 'R_medical'){
+           list.push(R_medical);
+	  	  }	  	  
+	  	  if ($(this).val() == 'R_sensetive'){
+           list.push(R_sensetive);
+	  	  }	  	  
+	  	  if ($(this).val() == 'R_calcium'){
+           list.push(R_calcium);
+	  	  }
+         });
+        var eaq = _.intersection(list[0], list[1]);
+	    eaq.forEach(textFun);
       } else{
         text = "<span class='text-danger'>Only 2 things select!</span>";
       }

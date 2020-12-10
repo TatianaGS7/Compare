@@ -13,9 +13,8 @@
   <body>
 
  
-<div class="container mt-4" id="tab">
- <div class="row" w3-repeat="toothpastes">
-
+<div class="container" id="tab">
+ <div class="row alert" w3-repeat="toothpastes">
   <div class="col-1">
     <div class="form-check">
       <label class="form-check-label font-weight-bold" for="{{id}}">
@@ -28,7 +27,9 @@
     <table class="table table-bordered table-sm">
       <thead class="{{Color}}">
         <tr>
-          <th>{{Name}} ({{cnt}})</th>
+          <th>{{Name}} ({{cnt}})
+           <button type="button" class="close" data-dismiss="alert">&times;</button>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -43,8 +44,9 @@
 </div>
 
     <div class="row mt-1 ml-5">
-      <div class="col-2">
-        <button id="btn_com" type="button" class="btn btn-outline-info">Compare</button>
+      <div class="col-3">
+        <button id="btn1" type="button" class="btn btn-outline-info">Compare -</button>
+        <button id="btn2" type="button" class="btn btn-outline-success">Compare +</button>
       </div>
       <div class="col-9 d-none" id="result">
           <div class="w-50" id="result_text">
